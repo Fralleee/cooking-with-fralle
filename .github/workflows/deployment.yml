@@ -19,11 +19,13 @@ jobs:
         with:
           node-version: "10.x"
   build:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - run: npm install
       - run: npm run build
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
