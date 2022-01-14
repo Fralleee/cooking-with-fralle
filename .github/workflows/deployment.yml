@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-test-deploy:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,8 +18,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
+  build:
       - run: npm install
       - run: npm run build
+  deploy:
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v1
         with:
