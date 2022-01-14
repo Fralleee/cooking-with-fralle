@@ -19,9 +19,13 @@ jobs:
         with:
           node-version: "10.x"
   build:
+    runs-on: ubuntu-latest
+    steps:
       - run: npm install
       - run: npm run build
   deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v1
         with:
