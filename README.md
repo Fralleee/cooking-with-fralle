@@ -2,11 +2,11 @@
 My ultimate cooking/baking recipes
 
 ## Todo
-- Download SVGs to use as images for the recipes
-- Create Layout
-- Download fonts for titles
-- Create a simple color scheme
-- Create first recipes
+- Recipes should be just data and generated view dynamically
+- Create search and browse grid layout
+- Fix title and subtitle styling
+- Maybe add background
+- Rename/refactor variables.scss
 
 
 ## Mockup
