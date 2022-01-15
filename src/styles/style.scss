@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto+Slab&display=swap');
 @import './variables.scss';
 
 html {
@@ -21,12 +21,13 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  background-color: ghostwhite;
   color: var(--color);
   box-sizing: border-box;
 
   h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
-    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Oleo Script', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: var(--title-color-intense);
     margin: 0;
     padding: 0;
@@ -34,20 +35,16 @@ body {
 
   h1 {
     color: var(--title-color);
-    font-size: 5rem;
+    font-size: clamp(3rem, calc(4vw + 3rem), 12rem); 
   }
 
   h2 {
-    color: var(--title-color);
-    font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 2rem;
+    color: var(--subtitle-color);
+    font-size: clamp(1.5rem, calc(2vw + 1.5rem), 6rem); 
   }
   
-  p {
-    text-align: justify;
+  ol, ul {    
+    font-size: clamp(.925rem, 3vw, 1.25rem); 
   }
 
   #root {

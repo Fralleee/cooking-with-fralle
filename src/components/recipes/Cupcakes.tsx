@@ -1,31 +1,39 @@
+
+import CupcakeImage from "images/items/cupcake.svg"
+import Recipe from "components/common/Recipe"
+import Title from "components/common/Title"
+import SubTitle from "components/common/SubTitle"
+import Ingredients from "components/common/Ingredients"
+import StepByStep from "components/common/StepByStep"
+import Image from "components/common/Image"
+
+
 const Cupcakes = () => {
   return (
-    <div>
-      Cupcakes
-      12 st
-
-
-      213 g mjöl
-      100-150 g socker / farin / muscavado / vaniljsocker
-      2 tsk bakpulver
-      1 tsk salt
-      180 ml ljummen mjölk
-      170 g smält smör och olja
-      2 ljumma ägg
-      Vaniljextrakt eller vaniljsocker
-      Citronzest
-      Smör för formen
-
-
-      1. Värm ugnen till 180 grader
-      2. Smöra muffinsformer
-      3. Blanda torra ingredienser i en mindre skål
-      4. Blanda blöta ingredienser i en större skål
-      5. Häll i torra till de blöta och blanda med slickepott
-      6. Häll i smeten i formerna
-      7. Baka i 20-25 minuter. Tandpetaren ska ha lite götta kvar.
-      8. Låt muffinsen svalna helt innan ätning.
-    </div>
+    <Recipe>
+      <Title>Cupcakes</Title>
+      <SubTitle>12 servings</SubTitle>
+      <Image src={CupcakeImage} alt="Cupcake" />
+      <Ingredients>
+        <li>213 g flour</li>
+        <li>150 g sugar (mix: farin / muscavado / vanilla)</li>
+        <li>2 tsp baking powder</li>
+        <li>1 tsp salt</li>
+        <li>180 ml milk</li>
+        <li>170 g melted butter and vegetable oil</li>
+        <li>2 room temperature eggs</li>
+        <li>Lemon zest</li>
+      </Ingredients>
+      <StepByStep>
+        <li>Heat oven to 180C</li>
+        <li>Mix dry ingredients in a small bowl</li>
+        <li>Mix wet ingredients in a larger bowl</li>
+        <li>Combine the dry ingredients into the larger bowl and mix with a spatula</li>
+        <li>Pour the mixture into a cupcake tray</li>
+        <li>Bake for 15-25 minutes. Check with tooth pick.</li>
+        <li>Let the cupcakes cool completely.</li>
+      </StepByStep>
+    </Recipe>
   )
 }
 
