@@ -7,7 +7,7 @@ import Pancakes from "components/recipes/Pancakes"
 const App = () => {
   return (
     <>
-      <Router>
+      <Router basename="/recipes">
         <Routes>
           <Route path="/">
             <Route index element={<AllRecipes />} />
