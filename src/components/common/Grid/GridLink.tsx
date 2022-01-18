@@ -14,14 +14,10 @@ const StyledLink = styled(Link)`
   width: 300px;
   background: ${props => props.color};
   border-radius: 32px;
-  margin: 1rem 0;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
   caret-color: transparent;
   transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  @media screen and (max-width: ${media.small}) {
-    display: block;
-    width: 100%;
-  }
 
   img {
     display: block;
@@ -46,7 +42,12 @@ const StyledLink = styled(Link)`
   &:hover {
     border-bottom: 6px solid var(--shadow-color);
     transform: translateY(-6px);
-  }  
+  } 
+
+  @media screen and (max-width: ${media.small}) {
+    width: 100%;
+    margin: 1rem;
+  } 
 `
 
 type GridLinkType = {
