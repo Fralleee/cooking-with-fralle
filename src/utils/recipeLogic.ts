@@ -22,11 +22,6 @@ const convertWeight = (grams: number): string => {
   return `${Math.round(grams)} g`
 }
 
-export type IngredientType = {
-  label: string
-  amount?: number
-  measurement?: "weight" | "volume" | "pieces"
-}
 export const getIngredientString = ({ label, amount, measurement }: IngredientType, base: number, servings: number): string => {
   if (amount === undefined) return label
 

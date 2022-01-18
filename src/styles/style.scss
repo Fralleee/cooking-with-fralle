@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Quicksand:wght@600&family=Roboto+Slab&display=swap');
 @import './variables.scss';
 
 html {
@@ -6,6 +6,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  caret-color: transparent;
 
   &:focus {
     outline: auto 5px -webkit-focus-ring-color;
@@ -21,7 +22,6 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: ghostwhite;
   color: var(--color);
   box-sizing: border-box;
 
@@ -33,6 +33,12 @@ body {
     padding: 0;
   }
 
+  input {
+    text-transform: lowercase;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+  }
+
   h1 {
     color: var(--title-color);
     font-size: clamp(3rem, calc(4vw + 3rem), 12rem); 
@@ -40,7 +46,7 @@ body {
 
   h2 {
     color: var(--subtitle-color);
-    font-size: clamp(1.5rem, calc(2vw + 1.5rem), 6rem); 
+    font-size: clamp(1.5rem, calc(1vw + 1.5rem), 6rem); 
   }
   
   ol, ul {    

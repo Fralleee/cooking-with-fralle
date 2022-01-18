@@ -1,26 +1,29 @@
-
 import PancakesImage from "images/items/pancakes.svg"
-import Recipe from "components/common/Recipe"
-import Title from "components/common/Title"
-import SubTitle from "components/common/SubTitle"
-import Ingredients from "components/common/Ingredients"
-import StepByStep from "components/common/StepByStep"
-import Image from "components/common/Image"
+import Recipe from "components/common/Recipe/Recipe"
+import Ingredients from "components/common/Recipe/Ingredients"
+import StepByStep from "components/common/Recipe/StepByStep"
+import ServingsCalculator from "components/common/Recipe/ServingsCalculator"
+import { useState } from "react"
+import { getIngredientString } from "utils/recipeLogic"
 
+const ingredients: IngredientType[] = [
+  { label: "ägg", amount: 2, measurement: "pieces" },
+  { label: "vetemjöl", amount: 200, measurement: "volume" },
+  { label: "mjölk", amount: 200, measurement: "volume" },
+  { label: "smält smör", amount: 30, measurement: "volume" },
+  { label: "socker", amount: 30, measurement: "volume" },
+  { label: "salt", amount: 2, measurement: "volume" }
+]
+const base: number = 6
 
 const Pancakes = () => {
+  const [servings, setServings] = useState(base)
+  const handleClick = (increase: boolean) => () => setServings(increase ? servings + 2 : servings - 2)
   return (
-    <Recipe>
-      <Title>Pancakes</Title>
-      <SubTitle>6 pancakes</SubTitle>
-      <Image src={PancakesImage} alt="Pancakes" />
+    <Recipe title="Pancakes" image={PancakesImage} alt="Pancakes" imageOffsetY={50} titleSwatch="midnight" >
+      <ServingsCalculator servings={servings} onClick={handleClick} />
       <Ingredients>
-        <li>2 eggs</li>
-        <li>2 dl flour</li>
-        <li>3 dl milk</li>
-        <li>2 tbsp melted butter</li>
-        <li>2 tbsp sugar</li>
-        <li>1-2 measuring spoons salt</li>
+        {ingredients.map((ingredient, i) => <li key={i}>{getIngredientString(ingredient, base, servings)} </li>)}
       </Ingredients>
       <StepByStep>
         <li>Mix dry ingredients</li>

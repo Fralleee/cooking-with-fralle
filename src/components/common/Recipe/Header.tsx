@@ -3,21 +3,24 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { TiArrowBack } from "react-icons/ti"
 import media from "styles/media"
+import Title from "components/common/Title"
 
-const RecipeContainer = styled.div`
+const Container = styled.div`
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  caret-color: transparent;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 `
 
 const BackButton = styled(Link)`
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   font-size: 5rem;
   transition: all 150ms ease-out;
   color: var(--secondary-color);
+
   &:hover {
     color: var(--primary-color);
   }
@@ -31,11 +34,17 @@ const BackButton = styled(Link)`
   } 
 `
 
-const Recipe: FC = ({ children }) => (
-  <RecipeContainer>
-    <BackButton to="/"><TiArrowBack /></BackButton>
-    {children}
-  </RecipeContainer>
-)
+type RecipeHeaderType = {
+  title: string
+  color?: string
+}
+const Header: FC<RecipeHeaderType> = ({ title, color }) => {
+  return (
+    <Container>
+      <BackButton to="/" ><TiArrowBack /></BackButton>
+      <Title color={color}>{title}</Title>
+    </Container>
+  )
+}
 
-export default Recipe
+export default Header

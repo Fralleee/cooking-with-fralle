@@ -1,6 +1,5 @@
 import { FC } from "react"
 import styled from "styled-components"
-import SubTitle from "components/common/SubTitle"
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +8,12 @@ const Container = styled.div`
   margin: 0 auto;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
-  max-width: 400px;
+  padding: 0 1rem;
+  max-width: 480px;
+`
+
+const Display = styled.h2`
+  text-align: center;
 `
 
 const Button = styled.button`
@@ -44,7 +48,7 @@ const ServingsCalculator: FC<ServingsCalculatorType> = ({ servings, onClick }) =
   return (
     <Container>
       <Button onClick={onClick(false)}>-</Button>
-      <SubTitle>{servings} portioner</SubTitle>
+      <Display>{servings} portioner</Display>
       <Button onClick={onClick(true)}>+</Button>
     </Container>
   )
