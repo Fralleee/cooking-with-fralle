@@ -10,6 +10,7 @@
     "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.3.2",
     "@types/styled-components": "^5.1.19",
+    "@types/webpack-env": "^1.16.3",
     "color-thief-react": "^2.1.0",
     "fraction.js": "^4.1.2",
     "react": "^17.0.2",
@@ -21,6 +22,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.44.0",
     "styled-components": "^5.3.3",
+    "svg-react-loader": "^0.4.6",
     "typescript": "^4.5.4"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import EmptyImage from "images/items/empty.svg"
+import { empty } from "images/items"
 import Recipe from "components/common/Recipe/Recipe"
 import styled from "styled-components"
 
@@ -9,7 +9,7 @@ const Information = styled.p`
 
 const NoMatch = () => {
   return (
-    <Recipe title="Not found" image={EmptyImage} alt="Not found" >
+    <Recipe title="Not found" SVG={empty}>
       <Information>Kunde tyvärr inte hitta receptet.</Information>
     </Recipe>
   )

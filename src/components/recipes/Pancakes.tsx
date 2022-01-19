@@ -1,4 +1,4 @@
-import PancakesImage from "images/items/pancakes.svg"
+import { pancakes } from "images/items"
 import Recipe from "components/common/Recipe/Recipe"
 import Ingredients from "components/common/Recipe/Ingredients"
 import StepByStep from "components/common/Recipe/StepByStep"
@@ -20,7 +20,7 @@ const Pancakes = () => {
   const [servings, setServings] = useState(base)
   const handleClick = (increase: boolean) => () => setServings(increase ? servings + 2 : servings - 2)
   return (
-    <Recipe title="Pancakes" image={PancakesImage} alt="Pancakes" imageOffsetY={50} titleSwatch="midnight" >
+    <Recipe title="Pannkakor" SVG={pancakes} imageOffsetY={50} titleSwatch="midnight" >
       <ServingsCalculator servings={servings} onClick={handleClick} />
       <Ingredients>
         {ingredients.map((ingredient, i) => <li key={i}>{getIngredientString(ingredient, base, servings)} </li>)}

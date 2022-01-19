@@ -9,8 +9,27 @@ const OuterContainer = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background-color: ${props => props.color};
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.1);
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,.1),
+      rgba(0,0,0,.1) 3rem,
+      rgba(0,0,0,.05) 3rem,
+      rgba(0,0,0,.05) 6rem
+    );
+    z-index: 0;
+  }
 `
 
+type ImageType = { imageOffsetY: number }
 const RecipeContainer = styled.div<ImageType>`
   position: relative;
   max-width: 900px;
@@ -23,19 +42,21 @@ const RecipeContainer = styled.div<ImageType>`
   padding-top: 125px;
   padding-bottom: 4rem;
   margin-top: ${props => 150 - props.imageOffsetY}px;
-`
+  z-index: 1;
 
-type ImageType = { imageOffsetY: number }
-const Image = styled.img<ImageType>`
-  position: absolute;
-  left: 50%;
-  top: -150px;
-  transform: translateX(-50%);
-  margin-top: ${props => props.imageOffsetY}px;
-  max-width: 200px;
-  width: 100%;
-  user-select: none;
-  z-index: 2;
+  svg {    
+    position: absolute;
+    left: 50%;
+    top: -150px;
+    transform: translateX(-50%);
+    margin-top: ${props => props.imageOffsetY}px;
+    max-width: 200px;
+    width: 100%;
+    user-select: none;
+    stroke-width: .5px;
+    stroke: rgba(0,0,0, .4);
+    z-index: 2;
+  }
 `
 
 const Plate = styled.img`
@@ -49,22 +70,20 @@ const Plate = styled.img`
   z-index: 1;
 `
 
-
 type RecipeType = {
   title: string
   titleSwatch?: string
-  image: string
-  alt: string
+  SVG: SVGImage
   imageOffsetY?: number
 }
-const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, image, alt, imageOffsetY = 0 }) => {
-  const { data } = usePalette(image, 2, "hex")
+const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffsetY = 0 }) => {
+  const { data } = usePalette(SVG.URL, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"
   return (
     <OuterContainer color={color}>
       <Header title={title} color={titleSwatch} />
       <RecipeContainer imageOffsetY={imageOffsetY} >
-        <Image src={image} alt={alt} imageOffsetY={imageOffsetY} />
+        <SVG.Image />
         <Plate src={PlateImage} alt="Plate" />
         {children}
       </RecipeContainer>

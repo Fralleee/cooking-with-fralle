@@ -11,7 +11,7 @@ const GridContainer = styled.div`
   list-style: none;
   padding: 0;
   padding-top: 2rem;
-  justify-content: space-around;
+  justify-content: center;
 `
 
 const Grid: FC = ({ children }) => (

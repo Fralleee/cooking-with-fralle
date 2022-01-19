@@ -10,21 +10,24 @@ const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 240px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   background: ${props => props.color};
   border-radius: 32px;
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
+  margin: 1rem;
   caret-color: transparent;
-  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 
+    box-shadow 250ms cubic-bezier(0.175, 0.885, 0.405, 1.570),
+    transform 250ms cubic-bezier(0.175, 0.885, 0.405, 1.570);
 
-  img {
+  svg {
     display: block;
     width: 100%;
     max-width: 140px;
     margin-top: -3rem;
     height: auto;
+    stroke-width: 0.1mm;
+    stroke: rgba(0,0,0, .5);
   }
 
   h2 {
@@ -33,34 +36,38 @@ const StyledLink = styled(Link)`
     width: 100%;
     text-align: center;
     color: var(--background-color);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--color);
+    -webkit-text-stroke-width: 1.25px;
+    -webkit-text-stroke-color: rgb(96,96,96);
+    z-index: 1;
+    font-size: 2.2rem;
   }
 
-  border-bottom: 0 solid var(--shadow-color);
-
   &:hover {
-    border-bottom: 6px solid var(--shadow-color);
-    transform: translateY(-6px);
+    box-shadow: 4px 6px 0 3px rgba(0,0,0,.05);
+    transform: rotate(5deg) scale(1.05);
   } 
 
   @media screen and (max-width: ${media.small}) {
     width: 100%;
-    margin: 1rem;
+    margin: 1rem;    
+    &:hover {
+      box-shadow: none;
+      transform: none;
+    } 
   } 
 `
 
 type GridLinkType = {
   to: string
   name: string
-  image: string
+  SVG: SVGImage
 }
-const GridLink: FC<GridLinkType> = ({ to, name, image }) => {
-  const { data } = usePalette(image, 2, "hex")
+const GridLink: FC<GridLinkType> = ({ to, name, SVG }) => {
+  const { data } = usePalette(SVG.URL, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"
   return (
     <StyledLink to={to} color={color}>
-      <img src={image} alt={name} />
+      <SVG.Image />
       <h2>{name}</h2>
     </StyledLink>
   )

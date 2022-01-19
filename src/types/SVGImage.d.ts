@@ -1,0 +1,1 @@
+type SVGImage = { URL: string, Image: FunctionComponent }

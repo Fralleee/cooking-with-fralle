@@ -1,7 +1,6 @@
 import Grid from "components/common/Grid/Grid"
 import GridLink from "components/common/Grid/GridLink"
-import CupcakeImage from "images/items/cupcake.svg"
-import PancakesImage from "images/items/pancakes.svg"
+import { cupcake, pancakes, dressing, mudcake, pie, drink } from "images/items"
 import styled from "styled-components"
 import Title from "components/common/Title"
 import Searchbar from "components/common/Searchbar"
@@ -12,8 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  padding-top: 80px;
+  padding: 75px 1rem;
   background: repeating-linear-gradient(
     90deg,
     #99D2CB,
@@ -24,10 +22,15 @@ const Container = styled.div`
 `
 
 const bakingKeywords = ["bak", "bakning", "bakat", "fika", "efterätt", "dessert", "götta"]
+const drinkKeywords = ["drink", "liquor"]
 
 const allRecipes: RecipeSearchItem[] = [
-  { to: "/cupcakes", name: "Muffins", image: CupcakeImage, keywords: ["muffins", "cupcakes", ...bakingKeywords] },
-  { to: "/pancakes", name: "Pannkakor", image: PancakesImage, keywords: ["pannkakor", "pancakes", ...bakingKeywords] }
+  { to: "/cupcakes", name: "Muffins", SVG: cupcake, keywords: ["muffins", "cupcakes", ...bakingKeywords] },
+  { to: "/pancakes", name: "Pannkakor", SVG: pancakes, keywords: ["pannkakor", "pancakes", ...bakingKeywords] },
+  { to: "/salad-dressing", name: "Salladsdressing", SVG: dressing, keywords: ["sallad", "dressing", ...bakingKeywords] },
+  { to: "/mudcake", name: "Kladdkaka", SVG: mudcake, keywords: ["kladdkaka", "mudcake", ...bakingKeywords] },
+  { to: "/apple-pie", name: "Äppelpaj", SVG: pie, keywords: ["äpple", "äppel", "apple", "paj", "pie", ...bakingKeywords] },
+  { to: "/dijon-travolta", name: "Dijon Travolta", SVG: drink, keywords: ["dijon", "travolta", "tequila", "citron", ...drinkKeywords] }
 ]
 
 const AllRecipes = () => {
@@ -36,7 +39,7 @@ const AllRecipes = () => {
 
   useEffect(() => {
     setRecipes(allRecipes.filter(recipe => recipe.keywords.some(keyword => keyword.includes(filter))))
-  }, [filter, recipes, setRecipes])
+  }, [filter, setRecipes])
 
   const handleInput = (value: string) => setFilter(value)
 
@@ -48,9 +51,7 @@ const AllRecipes = () => {
       </Container>
       <nav>
         <Grid>
-          {recipes.map(recipe => (
-            <GridLink to={recipe.to} name={recipe.name} image={recipe.image} />
-          ))}
+          {recipes.map(({ keywords, ...rest }, i) => <GridLink key={rest.name} {...rest} />)}
         </Grid>
       </nav>
     </>

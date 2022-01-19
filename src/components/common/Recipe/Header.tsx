@@ -14,12 +14,17 @@ const Container = styled.div`
 
 const BackButton = styled(Link)`
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   font-size: 5rem;
   transition: all 150ms ease-out;
-  color: var(--secondary-color);
+  color: white;
+
+  svg {
+    stroke-width: 0.15mm;
+    stroke: rgba(0,0,0,.25);
+  }
 
   &:hover {
     color: var(--primary-color);
@@ -31,6 +36,7 @@ const BackButton = styled(Link)`
     left: auto;
     bottom: 0;
     right: 0;
+    color: var(--secondary-color);
   } 
 `
 
@@ -42,7 +48,7 @@ const Header: FC<RecipeHeaderType> = ({ title, color }) => {
   return (
     <Container>
       <BackButton to="/" ><TiArrowBack /></BackButton>
-      <Title color={color}>{title}</Title>
+      <Title color={color} >{title}</Title>
     </Container>
   )
 }

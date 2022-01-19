@@ -1,6 +1,6 @@
 type RecipeSearchItem = {
   name: string
   to: string
-  image: string
+  SVG: SVGImage
   keywords: string[]
 }
