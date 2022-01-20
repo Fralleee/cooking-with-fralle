@@ -4,6 +4,7 @@ import media from "styles/media"
 import styled from "styled-components"
 import { TiArrowBack } from "react-icons/ti"
 
+// #region styled
 const StyledLink = styled(Link)`
 position: absolute;
 z-index: 100;
@@ -31,6 +32,7 @@ svg {
   color: var(--link-color);
 } 
 `
+// #endregion
 
 const BackButton = () => (
   <StyledLink to="/"><TiArrowBack /></StyledLink>

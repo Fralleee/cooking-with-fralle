@@ -6,6 +6,7 @@ import { usePalette } from "color-thief-react"
 import { motion } from "framer-motion"
 import { fadeInTransition } from "utils/pageTransitions"
 
+// #region styled
 const OuterContainer = styled.div`  
   display: flex; 
   flex-direction: column;
@@ -24,7 +25,6 @@ const OuterContainer = styled.div`
   }
 `
 
-type ImageType = { imageOffsetY: number }
 const RecipeContainer = styled.div<ImageType>`
   position: relative;
   max-width: 900px;
@@ -64,13 +64,8 @@ const Plate = styled.img`
   user-select: none;
   z-index: 1;
 `
+// #endregion
 
-type RecipeType = {
-  title: string
-  titleSwatch?: string
-  SVG: SVGImage
-  imageOffsetY?: number
-}
 const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffsetY = 0 }) => {
   const { data } = usePalette(SVG.url, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"

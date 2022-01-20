@@ -1,0 +1,3 @@
+type ImageType = {
+  imageOffsetY: number
+}

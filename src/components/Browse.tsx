@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { fadeOutTransition } from "utils/pageTransitions"
 
+// #region styled
 const Wrapper = styled.div`
   min-height: 100vh;
   background-color: white;
@@ -32,10 +33,10 @@ const Container = styled.div`
     z-index: 0;
   }
 `
+// #endregion
 
 const bakingKeywords = ["bak", "bakning", "bakat", "fika", "efterätt", "dessert", "götta"]
 const drinkKeywords = ["drink", "liquor"]
-
 const allRecipes: RecipeSearchItem[] = [
   { to: "/cupcakes", name: "Muffins", SVG: cupcake, keywords: ["muffins", "cupcakes", ...bakingKeywords] },
   { to: "/pancakes", name: "Pannkakor", SVG: pancakes, keywords: ["pannkakor", "pancakes", ...bakingKeywords] },
@@ -45,7 +46,7 @@ const allRecipes: RecipeSearchItem[] = [
   { to: "/dijon-travolta", name: "Dijon Travolta", SVG: drink, keywords: ["dijon", "travolta", "tequila", "citron", ...drinkKeywords] }
 ]
 
-const AllRecipes = () => {
+const Browse = () => {
   const [filter, setFilter] = useState("")
   const [recipes, setRecipes] = useState(allRecipes)
 
@@ -72,4 +73,4 @@ const AllRecipes = () => {
   )
 }
 
-export default AllRecipes
+export default Browse

@@ -2,6 +2,7 @@ import { FC } from "react"
 import styled from "styled-components"
 import media from "styles/media"
 
+// #region styled
 const UnorderedList = styled.ul`
   position: relative;
   max-width: 50ch;
@@ -24,10 +25,8 @@ const Title = styled.li`
     left: 1.25rem; 
   } 
 `
+// #endregion
 
-type IngredientsType = {
-  title?: string
-}
 const Ingredients: FC<IngredientsType> = ({ children, title }) => {
   return (
     <>

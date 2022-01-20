@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { FcSearch } from "react-icons/fc"
 import { FC } from "react"
 
+// #region styled
 const Container = styled.div`
   position: relative;
   width: 400px;  
@@ -37,11 +38,9 @@ const Input = styled.input`
     caret-color: var(--color);
   }
 `
+// #endregion
 
-type SearchBarType = {
-  onChange: Function
-}
-const Searchbar: FC<SearchBarType> = ({ onChange }) => {
+const Searchbar: FC<SearchbarType> = ({ onChange }) => {
   return (
     <Container>
       <SearchIcon />

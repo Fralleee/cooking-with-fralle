@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import media from "styles/media"
 import { usePalette } from "color-thief-react"
 
+// #region styled
 const StyledLink = styled(Link)`
   box-sizing: content-box;
   position: relative;
@@ -54,12 +55,8 @@ const StyledLink = styled(Link)`
     } 
   } 
 `
+// #endregion
 
-type GridLinkType = {
-  to: string
-  name: string
-  SVG: SVGImage
-}
 const GridLink: FC<GridLinkType> = ({ to, name, SVG }) => {
   const { data } = usePalette(SVG.url, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"

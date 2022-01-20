@@ -1,14 +1,8 @@
 import { FC } from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
+import { scale } from "styles/keyframes"
 
-
-const scale = keyframes`
-{
-  0% { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-`
-
+// #region styled
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -49,11 +43,8 @@ const Button = styled.button`
     transform: scale(1.1);
   }
 `
+// #endregion
 
-type ServingsCalculatorType = {
-  servings: number
-  onClick: Function
-}
 const ServingsCalculator: FC<ServingsCalculatorType> = ({ servings, onClick }) => {
   return (
     <Container>

@@ -1,25 +1,5 @@
-import styled, { keyframes } from "styled-components"
-
-const gradient = keyframes`
-{
-  0% { background-position: 0 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0 50%; }
-}
-`
-
-const animateUp = keyframes`
-{
-  0% { 
-    opacity: 0; 
-    transform: translateY(100px); 
-  }
-  100% { 
-    opacity: 1;
-    transform: translateY(0); 
-  }
-}
-`
+import styled from "styled-components"
+import { animateUp, gradient } from "styles/keyframes"
 
 const Title = styled.h1`
   position: relative;

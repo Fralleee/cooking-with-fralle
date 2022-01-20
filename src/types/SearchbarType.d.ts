@@ -1,0 +1,3 @@
+type SearchbarType = {
+  onChange: Function
+}
