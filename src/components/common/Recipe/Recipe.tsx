@@ -18,15 +18,8 @@ const OuterContainer = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,.1);
-    background: repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,.1),
-      rgba(0,0,0,.1) 3rem,
-      rgba(0,0,0,.05) 3rem,
-      rgba(0,0,0,.05) 6rem
-    );
+    bottom: 0;    
+    background: var(--stripes);
     z-index: 0;
   }
 `
@@ -40,7 +33,7 @@ const RecipeContainer = styled.div<ImageType>`
   margin: 0 auto;
   caret-color: transparent;
   background: var(--background-color);
-  border-radius: 48px 48px 0 0;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   padding-top: 125px;
   padding-bottom: 4rem;
   margin-top: ${props => 150 - props.imageOffsetY}px;
@@ -55,8 +48,8 @@ const RecipeContainer = styled.div<ImageType>`
     max-width: 200px;
     width: 100%;
     user-select: none;
-    stroke-width: .5px;
-    stroke: rgba(0,0,0, .4);
+    stroke-width: 0.1mm;
+    stroke: var(--stroke-color);
     z-index: 2;
   }
 `

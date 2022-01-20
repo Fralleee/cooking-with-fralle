@@ -13,12 +13,10 @@ const StyledLink = styled(Link)`
   height: 250px;
   width: 250px;
   background: ${props => props.color};
-  border-radius: 32px;
+  border-radius: var(--radius-lg);
   margin: 1rem;
   caret-color: transparent;
-  transition: 
-    box-shadow 250ms cubic-bezier(0.175, 0.885, 0.405, 1.570),
-    transform 250ms cubic-bezier(0.175, 0.885, 0.405, 1.570);
+  transition: box-shadow 250ms var(--easeOutBack-large), transform 250ms var(--easeOutBack-large);
 
   svg {
     display: block;
@@ -27,7 +25,7 @@ const StyledLink = styled(Link)`
     margin-top: -3rem;
     height: auto;
     stroke-width: 0.1mm;
-    stroke: rgba(0,0,0, .5);
+    stroke: var(--stroke-color);
   }
 
   h2 {

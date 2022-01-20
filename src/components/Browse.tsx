@@ -14,17 +14,23 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 75px 1rem;
-  background: repeating-linear-gradient(
-    90deg,
-    #99D2CB,
-    #99D2CB 3rem,
-    #A9D6D1 3rem,
-    #A9D6D1 6rem
-  );
+  background-color: var(--header-background);
+  
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--stripes);
+    z-index: 0;
+  }
 `
 
 const bakingKeywords = ["bak", "bakning", "bakat", "fika", "efterätt", "dessert", "götta"]

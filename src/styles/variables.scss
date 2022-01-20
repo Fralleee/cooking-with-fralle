@@ -1,18 +1,23 @@
 :root {
+  // default colors
   --color: rgb(32, 48, 54);
   --background-color: rgb(248,244,240);
-  --stroke-color: rgba(12,8,4,.33);
+  --stroke-color: rgba(0,0,0,.5);
   --shadow-color: rgba(12,8,4,.15);
 
-  --primary-color: #42a5f5;
-  --secondary-color: #ba68c8;
-  --error-color: #ef5350;
-  --warning-color: #ff9800;
-  --info-color: #03a9f4;
-  --success-color: #4caf50;
-  --emphasized-color: #92a2b2;
+  // colors
+  --header-background: #99D2DB;
+  --hover-color: #42a5f5;
+  --link-color: #ba68c8;
+  --stripes: repeating-linear-gradient(
+    90deg,
+    rgba(0,0,0,.1),
+    rgba(0,0,0,.1) 3rem,
+    rgba(0,0,0,.05) 3rem,
+    rgba(0,0,0,.05) 6rem
+  );
 
-  /* Gradient colors */ 
+  // gradients
   --purple-gradient: linear-gradient(220.55deg, #A531DC 0%, #4300B1 100%);
   --red-gradient: linear-gradient(220.55deg, #FF896D 0%, #D02020 100%);
   --blue-gradient: linear-gradient(220.55deg, #3793FF 0%, #0017E4 100%);
@@ -26,9 +31,6 @@
   --midnight-gradient: linear-gradient(220.55deg, #00E0EE 0%, #A060EE 100%);
   --fizzy-gradient: linear-gradient(220.55deg, #FF8570 0%, #418CB7 100%);
   --fizzy-light-gradient: linear-gradient(220.55deg, #89c6ff 0%, #ff8bf3 100%);
-
-
-
   --vital-ocean: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   --kale-salad: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   --disco-club: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
@@ -46,7 +48,14 @@
   --dusty-cactus: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
   --sexy-sandal: linear-gradient(90deg, #FC466B 0%, #FC466B 100%);
 
-  --section-radius: 12px;
-  --large-radius: 8px;
-  --small-radius: 4px;
+  // border-radius
+  --radius-xl: 48px;
+  --radius-lg: 32px;
+  --radius-md: 8px;
+  --radius-sm: 4px;
+
+  // timing
+  --easeInOutQuadratic: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --easeOutBack-large: cubic-bezier(0.175, 0.885, 0.405, 1.570);
 }

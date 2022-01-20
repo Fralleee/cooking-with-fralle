@@ -15,11 +15,11 @@ color: white;
 
 svg {
   stroke-width: 0.15mm;
-  stroke: rgba(0,0,0,.25);
+  stroke: var(--stroke-color);
 }
 
 &:hover {
-  color: var(--primary-color);
+  color: var(--hover-color);
 }
 
 @media screen and (max-width: ${media.small}) {
@@ -28,7 +28,7 @@ svg {
   left: auto;
   bottom: 0;
   right: 0;
-  color: var(--secondary-color);
+  color: var(--link-color);
 } 
 `
 

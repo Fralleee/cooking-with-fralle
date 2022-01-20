@@ -1,5 +1,13 @@
 import { FC } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+
+const scale = keyframes`
+{
+  0% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+`
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +22,7 @@ const Container = styled.div`
 
 const Display = styled.h2`
   text-align: center;
+  animation: ${scale} 200ms var(--easeOutBack);
 `
 
 const Button = styled.button`
@@ -30,13 +39,14 @@ const Button = styled.button`
   color: var(--title-color-intense);
   font-size: 4rem;
   line-height: 1rem;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
+  color: var(--link-color);
+  border: 2px solid var(--link-color);
   transition: all 150ms ease-out;
-  border-radius: var(--small-radius);
+  border-radius: var(--radius-sm);
   &:hover {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--hover-color);
+    color: var(--hover-color);
+    transform: scale(1.1);
   }
 `
 
@@ -48,7 +58,7 @@ const ServingsCalculator: FC<ServingsCalculatorType> = ({ servings, onClick }) =
   return (
     <Container>
       <Button onClick={onClick(false)}>-</Button>
-      <Display>{servings} portioner</Display>
+      <Display key={servings}>{servings} portioner</Display>
       <Button onClick={onClick(true)}>+</Button>
     </Container>
   )

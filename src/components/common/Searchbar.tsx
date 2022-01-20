@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 400px;  
   max-width: 100%;
   margin: 1rem 0;
+  z-index: 1;
 `
 
 const SearchIcon = styled(FcSearch)`
@@ -21,7 +22,7 @@ const Input = styled.input`
   position: relative;
   width: 100%;
   padding: .75rem 0 .75rem 64px;
-  border-radius: var(--large-radius);
+  border-radius: var(--radius-md);
   outline: none;
   border: none;
   opacity: 0.8;

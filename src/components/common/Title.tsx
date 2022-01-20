@@ -8,11 +8,24 @@ const gradient = keyframes`
 }
 `
 
+const animateUp = keyframes`
+{
+  0% { 
+    opacity: 0; 
+    transform: translateY(100px); 
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+`
+
 const Title = styled.h1`
   position: relative;
   width: 100%;
   text-align: center;
-  animation: ${gradient} 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: ${gradient} 5s var(--easeInOutQuadratic) infinite, ${animateUp} 600ms 50ms var(--easeOutBack);
   background: ${props => props.color ? `var(--${props.color}-gradient)` : "var(--cozy-gradient)"};
   background-size: 300%;
   background-clip: text;
