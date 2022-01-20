@@ -5,5 +5,5 @@ My ultimate cooking/baking recipes
 http://www.fralle.com/recipe
 
 ## Preview
-![Index](https://user-images.githubusercontent.com/6375613/150346738-a927d5c0-c79f-4eb9-aa15-1c7e9f3d7a2b.png)
-![Recipe](https://user-images.githubusercontent.com/6375613/150346754-19fe3564-6f25-455b-ac37-d3d0a218fc62.png)
+![index](https://user-images.githubusercontent.com/6375613/150353120-746d1531-1f45-4a67-8a56-489a6060981e.png)
+![recipe](https://user-images.githubusercontent.com/6375613/150353143-bb68ce55-c414-45d4-bed5-248778773f35.png)
