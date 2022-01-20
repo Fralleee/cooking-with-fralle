@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet, useLocation } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router-dom"
 import Browse from "components/Browse"
 import NoMatch from "components/NoMatch"
 import Cupcakes from "components/recipes/Cupcakes"
@@ -7,20 +7,18 @@ import Saladdressing from "components/recipes/Saladdressing"
 import Mudcake from "components/recipes/Mudcake"
 import ApplePie from "components/recipes/ApplePie"
 import DijonTravolta from "components/recipes/DijonTravolta"
-import { useEffect } from "react"
+import { AnimatePresence } from "framer-motion"
+import BackButton from "./common/BackButton"
 
 const App = () => {
-  const { pathname } = useLocation()
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+  const location = useLocation()
 
   return (
     <>
-      <Routes>
-        <Route path="/">
-          <Route index element={<Browse />} />
+      {location.pathname !== "/" && <BackButton />}
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Browse />} />
           <Route path="cupcakes" element={<Cupcakes />} />
           <Route path="pancakes" element={<Pancakes />} />
           <Route path="salad-dressing" element={<Saladdressing />} />
@@ -28,9 +26,8 @@ const App = () => {
           <Route path="apple-pie" element={<ApplePie />} />
           <Route path="dijon-travolta" element={<DijonTravolta />} />
           <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
-      <Outlet />
+        </Routes>
+      </AnimatePresence>
     </>
   )
 }

@@ -5,7 +5,13 @@ import styled from "styled-components"
 import Title from "components/common/Title"
 import Searchbar from "components/common/Searchbar"
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { fadeOutTransition } from "utils/pageTransitions"
 
+const Wrapper = styled.div`
+  min-height: 100vh;
+  background-color: white;
+`
 
 const Container = styled.div`
   display: flex;
@@ -44,17 +50,19 @@ const AllRecipes = () => {
   const handleInput = (value: string) => setFilter(value)
 
   return (
-    <>
-      <Container>
-        <Title>Recept</Title>
-        <Searchbar onChange={handleInput} />
-      </Container>
-      <nav>
-        <Grid>
-          {recipes.map(({ keywords, ...rest }, i) => <GridLink key={rest.name} {...rest} />)}
-        </Grid>
-      </nav>
-    </>
+    <motion.div key="Browse" {...fadeOutTransition} onAnimationComplete={() => window.scrollTo(0, 0)}>
+      <Wrapper>
+        <Container>
+          <Title>Recept</Title>
+          <Searchbar onChange={handleInput} />
+        </Container>
+        <nav>
+          <Grid>
+            {recipes.map(({ keywords, ...rest }, i) => <GridLink key={rest.name} {...rest} />)}
+          </Grid>
+        </nav>
+      </Wrapper>
+    </motion.div>
   )
 }
 

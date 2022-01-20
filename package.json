@@ -13,6 +13,7 @@
     "@types/webpack-env": "^1.16.3",
     "color-thief-react": "^2.1.0",
     "fraction.js": "^4.1.2",
+    "framer-motion": "4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",

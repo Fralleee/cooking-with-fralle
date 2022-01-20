@@ -66,7 +66,7 @@ const GridLink: FC<GridLinkType> = ({ to, name, SVG }) => {
   const { data } = usePalette(SVG.URL, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"
   return (
-    <StyledLink to={to} color={color}>
+    <StyledLink to={to} color={color} onClick={() => document.body.style.backgroundColor = color}>
       <SVG.Image />
       <h2>{name}</h2>
     </StyledLink>

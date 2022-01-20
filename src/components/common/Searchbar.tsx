@@ -44,7 +44,7 @@ const Searchbar: FC<SearchBarType> = ({ onChange }) => {
   return (
     <Container>
       <SearchIcon />
-      <Input type="text" placeholder="Muffins..." onChange={e => onChange(e.currentTarget.value)} />
+      <Input type="text" placeholder="Muffins..." onChange={e => onChange(e.currentTarget.value.toLowerCase())} />
     </Container>
   )
 }

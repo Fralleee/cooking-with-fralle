@@ -1,8 +1,10 @@
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import styled from "styled-components"
 import PlateImage from "images/items/plate.svg"
 import Header from "./Header"
 import { usePalette } from "color-thief-react"
+import { motion } from "framer-motion"
+import { fadeInTransition } from "utils/pageTransitions"
 
 const OuterContainer = styled.div`  
   display: flex; 
@@ -12,7 +14,7 @@ const OuterContainer = styled.div`
 
   &:after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -79,15 +81,27 @@ type RecipeType = {
 const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffsetY = 0 }) => {
   const { data } = usePalette(SVG.URL, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"
+
+  useEffect(() => {
+    if (color !== "#ffffff")
+      document.body.style.backgroundColor = color
+  }, [color])
+
   return (
-    <OuterContainer color={color}>
-      <Header title={title} color={titleSwatch} />
-      <RecipeContainer imageOffsetY={imageOffsetY} >
-        <SVG.Image />
-        <Plate src={PlateImage} alt="Plate" />
-        {children}
-      </RecipeContainer>
-    </OuterContainer>
+    <motion.div
+      key={title}
+      {...fadeInTransition}
+      onAnimationComplete={() => window.scrollTo(0, 0)}
+    >
+      <OuterContainer color={color}>
+        <Header title={title} color={titleSwatch} />
+        <RecipeContainer imageOffsetY={imageOffsetY} >
+          <SVG.Image />
+          <Plate src={PlateImage} alt="Plate" />
+          {children}
+        </RecipeContainer>
+      </OuterContainer>
+    </motion.div>
   )
 }
 
