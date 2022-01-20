@@ -1,6 +1,11 @@
 # Recipes
 My ultimate cooking/baking recipes
 
+## Live
+http://www.fralle.com/recipe
+
 ## Preview
-![image](https://user-images.githubusercontent.com/6375613/150340605-baac3574-dc9c-47dc-b23d-c842a3d5695c.png)
-![image](https://user-images.githubusercontent.com/6375613/150341028-f1a90395-c6c7-4b4d-88a2-cee4d80c410e.png)
+<div style="display: flex">
+  <img style="display: inline-block" src="https://user-images.githubusercontent.com/6375613/150341257-208ed336-3c8f-4842-b5ef-a080251d524b.png" alt="Desktop preview" width="720"/>
+  <img style="display: inline-block" src="https://user-images.githubusercontent.com/6375613/150341661-0d8d9503-488f-4670-878c-93b146836b3c.png" alt="Mobile preview" width="200"/>
+</div>
