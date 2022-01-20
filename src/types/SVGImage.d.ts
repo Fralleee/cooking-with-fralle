@@ -1,1 +1,1 @@
-type SVGImage = { URL: string, Image: FunctionComponent }
+type SVGImage = { url: string, Image: FunctionComponent }

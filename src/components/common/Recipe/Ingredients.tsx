@@ -1,5 +1,6 @@
 import { FC } from "react"
 import styled from "styled-components"
+import media from "styles/media"
 
 const UnorderedList = styled.ul`
   position: relative;
@@ -18,6 +19,10 @@ const Title = styled.li`
   font-size: 2.25rem;
   text-transform: capitalize;
   font-family: 'Oleo Script', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  @media screen and (max-width: ${media.small}) {
+    left: 1.25rem; 
+  } 
 `
 
 type IngredientsType = {

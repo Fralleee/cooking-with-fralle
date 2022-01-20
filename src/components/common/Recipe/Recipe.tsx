@@ -79,7 +79,7 @@ type RecipeType = {
   imageOffsetY?: number
 }
 const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffsetY = 0 }) => {
-  const { data } = usePalette(SVG.URL, 2, "hex")
+  const { data } = usePalette(SVG.url, 2, "hex")
   const color = data && data.length > 0 ? data[0] : "#ffffff"
 
   useEffect(() => {
