@@ -1,4 +1,4 @@
-# Typescript and GraphQL training
+# Recipes
 My ultimate cooking/baking recipes
 
 
