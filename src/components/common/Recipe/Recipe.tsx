@@ -2,7 +2,6 @@ import { FC, useEffect } from "react"
 import styled from "styled-components"
 import PlateImage from "images/items/plate.svg"
 import Header from "./Header"
-import { usePalette } from "color-thief-react"
 import { motion } from "framer-motion"
 import { fadeInTransition } from "utils/pageTransitions"
 
@@ -67,13 +66,10 @@ const Plate = styled.img`
 // #endregion
 
 const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffsetY = 0 }) => {
-  const { data } = usePalette(SVG.url, 2, "hex")
-  const color = data && data.length > 0 ? data[0] : "#ffffff"
 
   useEffect(() => {
-    if (color !== "#ffffff")
-      document.body.style.backgroundColor = color
-  }, [color])
+    document.body.style.backgroundColor = SVG.color
+  }, [SVG.color])
 
   return (
     <motion.div
@@ -81,7 +77,7 @@ const Recipe: FC<RecipeType> = ({ children, title, titleSwatch, SVG, imageOffset
       {...fadeInTransition}
       onAnimationComplete={() => window.scrollTo(0, 0)}
     >
-      <OuterContainer color={color}>
+      <OuterContainer color={SVG.color}>
         <Header title={title} color={titleSwatch} />
         <RecipeContainer imageOffsetY={imageOffsetY} >
           <SVG.Image />

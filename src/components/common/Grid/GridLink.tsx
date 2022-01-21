@@ -2,7 +2,6 @@ import { FC } from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import media from "styles/media"
-import { usePalette } from "color-thief-react"
 
 // #region styled
 const StyledLink = styled(Link)`
@@ -58,10 +57,8 @@ const StyledLink = styled(Link)`
 // #endregion
 
 const GridLink: FC<GridLinkType> = ({ to, name, SVG }) => {
-  const { data } = usePalette(SVG.url, 2, "hex")
-  const color = data && data.length > 0 ? data[0] : "#ffffff"
   return (
-    <StyledLink to={to} color={color} onClick={() => document.body.style.backgroundColor = color}>
+    <StyledLink to={to} color={SVG.color} onClick={() => document.body.style.backgroundColor = SVG.color}>
       <SVG.Image />
       <h2>{name}</h2>
     </StyledLink>
