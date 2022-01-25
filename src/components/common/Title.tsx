@@ -1,7 +1,9 @@
+import { FC } from "react"
 import styled from "styled-components"
 import { animateUp, gradient } from "styles/keyframes"
+import { getTitleFontSize } from "utils/stringHelpers"
 
-const Title = styled.h1`
+const TitleText = styled.h1<{ fontSize: number }>`
   position: relative;
   width: 100%;
   text-align: center;
@@ -14,7 +16,20 @@ const Title = styled.h1`
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(0,0,0,0.3);
   z-index: 1;
-  font-size: clamp(1.5rem, calc(6vw + 1.25rem), 12rem); 
+  font-size: clamp(${props => props.fontSize}px, calc(6vw + 1.25rem), 12rem); 
 `
+
+type TitleProps = {
+  color?: string
+}
+const Title: FC<TitleProps> = ({ children, color }) => {
+  if (typeof children !== "string") return <p>Something went wrong</p>
+
+  const fontSize = getTitleFontSize(children.length, window.screen.width)
+  return (
+    <TitleText color={color} fontSize={fontSize}>{children}</TitleText>
+  )
+}
+
 
 export default Title

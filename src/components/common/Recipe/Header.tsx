@@ -1,6 +1,6 @@
 import { FC } from "react"
 import styled from "styled-components"
-import Title from "components/common/Title"
+import TitleText from "components/common/Title"
 
 // #region styled
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Header: FC<RecipeHeaderType> = ({ title, color }) => {
   return (
     <Container>
-      <Title color={color} >{title}</Title>
+      <TitleText color={color} >{title}</TitleText>
     </Container>
   )
 }

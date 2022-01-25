@@ -2,7 +2,7 @@ import Grid from "components/common/Grid/Grid"
 import GridLink from "components/common/Grid/GridLink"
 import { cupcake, pancakes, dressing, mudcake, pie, drink } from "images/items"
 import styled from "styled-components"
-import Title from "components/common/Title"
+import TitleText from "components/common/Title"
 import Searchbar from "components/common/Searchbar"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -60,7 +60,7 @@ const Browse = () => {
     <motion.div key="Browse" {...fadeOutTransition} onAnimationComplete={() => window.scrollTo(0, 0)}>
       <Wrapper>
         <Container>
-          <Title>Recept</Title>
+          <TitleText>Recept</TitleText>
           <Searchbar onChange={handleInput} />
         </Container>
         <nav>
