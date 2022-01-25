@@ -29,15 +29,15 @@ const convertWeight = (grams: number): string => {
   return `${Math.round(grams)} g`
 }
 
-export const getIngredientString = ({ label, amount, measurement }: IngredientType, base: number, servings: number): string => {
-  if (amount === undefined) return label
+export const getIngredient = ({ label, amount, measurement }: IngredientType, base: number, servings: number): { amount?: string, label: string } => {
+  if (amount === undefined) return { label }
 
   if (base !== servings) {
     amount = amount / base * servings
   }
 
-  if (measurement === "pieces") return `${convertToMeasurement(amount, 1)} ${label}`
-  if (measurement === "weight") return `${convertWeight(amount)} ${label}`
-  if (measurement === "drinkvolume") return `${convertDrinkVolume(amount)} ${label}`
-  return `${convertVolume(amount)} ${label}`
+  if (measurement === "pieces") return { amount: convertToMeasurement(amount, 1), label }
+  if (measurement === "weight") return { amount: convertWeight(amount), label }
+  if (measurement === "drinkvolume") return { amount: convertDrinkVolume(amount), label }
+  return { amount: convertVolume(amount), label }
 }

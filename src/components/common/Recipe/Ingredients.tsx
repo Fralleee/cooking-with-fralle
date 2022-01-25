@@ -10,6 +10,7 @@ const UnorderedList = styled.ul`
   margin-block-start: 3rem;
   margin-block-end: 3rem;
   list-style: circle;
+  text-transform: lowercase;
 `
 
 const Title = styled.li`

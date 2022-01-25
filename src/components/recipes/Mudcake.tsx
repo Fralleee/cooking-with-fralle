@@ -2,7 +2,7 @@ import { mudcake } from "images/items"
 import Recipe from "components/common/Recipe/Recipe"
 import Ingredients from "components/common/Recipe/Ingredients"
 import StepByStep from "components/common/Recipe/StepByStep"
-import { getIngredientString } from "utils/recipeLogic"
+import { getIngredient } from "utils/recipeLogic"
 import { useState } from "react"
 import ServingsCalculator from "components/common/Recipe/ServingsCalculator"
 
@@ -26,7 +26,10 @@ const Cupcakes = () => {
     <Recipe title="Kladdkaka" SVG={mudcake} titleSwatch="midnight" imageOffsetY={80}>
       <ServingsCalculator servings={servings} onClick={handleClick} />
       <Ingredients>
-        {ingredients.map((ingredient, i) => <li key={i}>{getIngredientString(ingredient, base, servings)} </li>)}
+        {ingredients.map((ingredient, i) => {
+          const { amount, label } = getIngredient(ingredient, base, servings)
+          return <li key={i}>{amount && <strong>{amount}</strong>} {label}</li>
+        })}
       </Ingredients>
       <StepByStep>
         <li>Sätt på ugnen på 180 grader.</li>
