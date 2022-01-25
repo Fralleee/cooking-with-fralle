@@ -11,7 +11,7 @@ Tech used
 
 Live
 -------------
-- [Live demo](http://www.fralle.com/recipe)
+- [Live demo](https://fralleee.github.io/recipes/)
 
 <em>Last updated 2022-01-20</em>
 
