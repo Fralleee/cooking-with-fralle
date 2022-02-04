@@ -1,4 +1,4 @@
-# Recipes
+# Cooking with Fralle
 My ultimate cooking/baking recipes
 
 
