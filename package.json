@@ -1,5 +1,5 @@
 {
-  "name": "recipes",
+  "name": "cooking-with-fralle",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://cooking.fralle.net/",
@@ -29,8 +29,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && yarn copy-cname",
     "eject": "react-scripts eject",
+    "copy-cname": "cp CNAME ./build || copy \"CNAME\" \"build\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
