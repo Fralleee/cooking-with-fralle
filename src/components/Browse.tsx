@@ -60,7 +60,7 @@ const Browse = () => {
     <motion.div key="Browse" {...fadeOutTransition} onAnimationComplete={() => window.scrollTo(0, 0)}>
       <Wrapper>
         <Container>
-          <TitleText>Recept</TitleText>
+          <TitleText subtitle="with Fralle">Cooking</TitleText>
           <Searchbar onChange={handleInput} />
         </Container>
         <nav>
