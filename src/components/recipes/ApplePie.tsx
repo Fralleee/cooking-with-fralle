@@ -7,7 +7,7 @@ import { useState } from "react"
 import ServingsCalculator from "components/common/Recipe/ServingsCalculator"
 
 const ingredientsFilling: IngredientType[] = [
-  { label: "Äpplen", amount: 6, measurement: "pieces" },
+  { label: "Äpplen", amount: 5, measurement: "pieces" },
   { label: "Strösocker", amount: 75, measurement: "volume" },
   { label: "Farinsocker", amount: 30, measurement: "volume" },
   { label: "Kanel", amount: 15, measurement: "volume" },
