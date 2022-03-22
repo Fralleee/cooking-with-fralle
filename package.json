@@ -19,21 +19,21 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
-    "sass": "^1.44.0",
     "styled-components": "^5.3.3",
     "svg-react-loader": "^0.4.6",
     "typescript": "^4.5.4"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.0",
+    "sass": "^1.44.0",
+    "typescript": "^4.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && yarn copy-redirects",
     "eject": "react-scripts eject",
-    "copy-redirects": "cp _redirects ./build || copy \"_redirects\" \"build\"",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "copy-redirects": "cp _redirects ./build || copy \"_redirects\" \"build\""
   },
   "eslintConfig": {
     "extends": [
