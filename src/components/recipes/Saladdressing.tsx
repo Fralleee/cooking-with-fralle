@@ -3,7 +3,7 @@ import Recipe from "components/common/Recipe/Recipe"
 import Ingredients from "components/common/Recipe/Ingredients"
 import StepByStep from "components/common/Recipe/StepByStep"
 import { getIngredient } from "utils/recipeLogic"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ServingsCalculator from "components/common/Recipe/ServingsCalculator"
 
 const ingredients: IngredientType[] = [
@@ -19,13 +19,25 @@ const base: number = 2
 const Cupcakes = () => {
   const [servings, setServings] = useState(base)
   const handleClick = (increase: boolean) => () => setServings(increase ? servings + 2 : servings - 2)
+
+  useEffect(() => {
+    document.title = "Salladsdressing"
+    return () => {
+      document.title = "Cooking with Fralle"
+    }
+  }, [])
+
   return (
-    <Recipe title="Salladsdressing" SVG={dressing} titleSwatch="red" imageOffsetY={-40} >
+    <Recipe title="Salladsdressing" SVG={dressing} titleSwatch="red" imageOffsetY={-40}>
       <ServingsCalculator servings={servings} onClick={handleClick} />
       <Ingredients>
         {ingredients.map((ingredient, i) => {
           const { amount, label } = getIngredient(ingredient, base, servings)
-          return <li key={i}>{amount && <strong>{amount}</strong>} {label}</li>
+          return (
+            <li key={i}>
+              {amount && <strong>{amount}</strong>} {label}
+            </li>
+          )
         })}
       </Ingredients>
       <StepByStep>

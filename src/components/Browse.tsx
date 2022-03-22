@@ -21,7 +21,7 @@ const Container = styled.div`
   align-items: center;
   padding: 75px 1rem;
   background-color: var(--header-background);
-  
+
   &:after {
     content: "";
     position: absolute;
@@ -65,7 +65,9 @@ const Browse = () => {
         </Container>
         <nav>
           <Grid>
-            {recipes.map(({ keywords, ...rest }, i) => <GridLink key={rest.name} {...rest} />)}
+            {recipes.map(({ keywords, ...rest }, i) => (
+              <GridLink key={rest.name} {...rest} />
+            ))}
           </Grid>
         </nav>
       </Wrapper>

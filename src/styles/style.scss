@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Quicksand:wght@600&family=Roboto+Slab&display=swap');
-@import './variables.scss';
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Quicksand:wght@600&family=Roboto+Slab&display=swap");
+@import "./variables.scss";
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   caret-color: transparent;
 
@@ -15,7 +17,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -25,9 +27,14 @@ body {
   color: var(--color);
   box-sizing: border-box;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-transform: capitalize;
-    font-family: 'Oleo Script', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Oleo Script", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     color: var(--title-color-intense);
     margin: 0;
     padding: 0;
@@ -35,7 +42,7 @@ body {
 
   input {
     text-transform: lowercase;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 1rem;
   }
 
@@ -45,11 +52,12 @@ body {
 
   h2 {
     color: var(--subtitle-color);
-    font-size: clamp(2.5rem, 1vw + 1.5rem, 6rem)
+    font-size: clamp(2.5rem, 1vw + 1.5rem, 6rem);
   }
-  
-  ol, ul {    
-    font-size: clamp(.925rem, 3vw, 1.25rem); 
+
+  ol,
+  ul {
+    font-size: clamp(0.925rem, 3vw, 1.25rem);
   }
 
   #root {
@@ -59,6 +67,5 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

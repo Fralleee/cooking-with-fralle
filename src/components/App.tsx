@@ -12,7 +12,6 @@ import BackButton from "./common/BackButton"
 
 const App = () => {
   const location = useLocation()
-
   return (
     <>
       {location.pathname !== "/" && <BackButton />}
