@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { animateUp, gradient } from "styles/keyframes"
 import { getTitleFontSize } from "utils/stringHelpers"
 
-const TitleText = styled.h1<{ fontSize: number; divider?: number; absolute?: boolean }>`
+const TitleText = styled.div<{ fontSize: number; divider?: number; absolute?: boolean }>`
   ${props =>
     props.absolute
       ? `
@@ -11,6 +11,12 @@ const TitleText = styled.h1<{ fontSize: number; divider?: number; absolute?: boo
     bottom: 0;
   `
       : "position: relative;"}
+  text-transform: capitalize;
+  font-family: "Oleo Script", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: var(--title-color-intense);
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
   width: 100%;
   text-align: center;
   animation: ${gradient} 5s var(--easeInOutQuadratic) infinite, ${animateUp} 600ms 50ms var(--easeOutBack);

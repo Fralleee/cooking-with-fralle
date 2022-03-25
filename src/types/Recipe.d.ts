@@ -1,7 +1,14 @@
 type Recipe = {
   title: string
-  image: string
+  to: string
+  image: SVGImage
   base: number
-  ingredients: IngredientType[]
+  keywords: string[]
+  imageOffset: number
+  titleSwatch: string
+  ingredients: {
+    label: string
+    data: IngredientType[]
+  }[]
   instructions: string[]
 }

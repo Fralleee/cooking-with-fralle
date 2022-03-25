@@ -1,5 +1,5 @@
 import { empty } from "images/items"
-import Recipe from "components/common/Recipe/Recipe"
+import Recipe from "components/Recipe/Recipe"
 import styled from "styled-components"
 import { useEffect } from "react"
 
