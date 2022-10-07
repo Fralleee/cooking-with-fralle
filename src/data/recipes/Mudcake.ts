@@ -21,7 +21,7 @@ const MudCake: Recipe = {
         { label: "Ljus sirap", amount: 100, measurement: "volume" },
         { label: "Vaniljpulver", amount: 10, measurement: "volume" },
         { label: "Starkt kaffe", amount: 30, measurement: "volume" },
-        { label: "Salt", amount: 2.5, measurement: "volume" }
+        { label: "Soja", amount: 2.5, measurement: "volume" }
       ]
     }
   ],
@@ -36,3 +36,4 @@ const MudCake: Recipe = {
 }
 
 export default MudCake
+
