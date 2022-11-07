@@ -28,12 +28,13 @@ const MudCake: Recipe = {
   instructions: [
     "Sätt på ugnen på 180 grader.",
     "Blanda torra ingredienser i en liten skål.",
+    "Avvakta tills smöret har kallnat innan det blandas med annat",
     "Blanda våta ingredienser i en större skål.",
     "Häll i torra till de våta och blanda med slickepott.",
     "Häll i smeten i formen.",
-    "Grädda i ca 15-20 minuter."
+    "Grädda i ca 15-20 minuter.",
+    "Låt svalna helt innan du frossar."
   ]
 }
 
 export default MudCake
-
