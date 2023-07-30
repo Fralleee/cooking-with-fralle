@@ -54,7 +54,7 @@ const CinnamonBuns: Recipe = {
     "Kavla sen ut, bre på bullsmet och rulla ihop. (om smeten är för stor dela den i två och kavla ut dom i omgångar)",
     "Dela rullen med kniv, totalt ska du få ut mellan 25-30bullar",
     "Lägg på bakplåtspapper dom du vill grädda, ha på handuk och låt jäsa 30-50min. Frys in dom andra som i videon.",
-    "Pensla dom jästa bullaran med äggvisp och ha på pärlsocker, grädda i ugnen på 200°c i 6-7 min. Ta ut och pensla på sockerlag. ",
+    "Pensla dom jästa bullaran med äggvisp och ha på pärlsocker, grädda i ugnen på 200°c i 6-7 min. Ta ut och pensla på sockerlag.",
     "Servera sen och njut av fikabordets konung!"
   ]
 }
